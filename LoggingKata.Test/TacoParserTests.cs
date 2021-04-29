@@ -30,7 +30,8 @@ namespace LoggingKata.Test
             //       each representing a TacoBell location
 
             //Arrange
-
+            
+            
             //Act
 
             //Assert
