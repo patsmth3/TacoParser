@@ -38,7 +38,7 @@ namespace LoggingKata
             ITrackable location1 = null;
             ITrackable location2 = null;
             
-            double distance = 0;
+            double distance = 0.0;
 
             // Include the Geolocation toolbox, so you can compare locations: `using GeoCoordinatePortable;`
 
@@ -71,6 +71,8 @@ namespace LoggingKata
                         location2 = locB;
                     }
                 }
+
+                var disMiles = distance / 1609.34;
                 Console.WriteLine(distance);
             }
         }

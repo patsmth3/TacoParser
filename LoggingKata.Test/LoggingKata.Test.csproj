@@ -17,4 +17,8 @@
   <ItemGroup>
     <ProjectReference Include="..\LoggingKata\LoggingKata.csproj" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="TacoParserTests.cs" />
+  </ItemGroup>
 </Project>
