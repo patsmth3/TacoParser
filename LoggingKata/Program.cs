@@ -47,23 +47,23 @@ namespace LoggingKata
             for (int i = 0; i < locations.Length; i++)
             {
                 ITrackable locA = locations[i];
-                
+
                 // Create a new corA Coordinate with your locA's lat and long
-                GeoCoordinate corA = new GeoCoordinate(locA.Location.Longitude, locA.Location.Latitude);
+                GeoCoordinate corA = new GeoCoordinate(locA.Location.Latitude, locA.Location.Longitude);
 
                 // Now, do another loop on the locations with the scope of your first loop, so you can grab the "destination" location (perhaps: `locB`)
                 for (int j = 0; j < locations.Length; j++)
                 {
                     ITrackable locB = locations[j];
                     // Create a new Coordinate with your locB's lat and long
-                    GeoCoordinate corB = new GeoCoordinate(locB.Location.Longitude, locB.Location.Latitude);
-                    
+                    GeoCoordinate corB = new GeoCoordinate(locB.Location.Latitude, locB.Location.Longitude);
+
                     // Now, compare the two using `.GetDistanceTo()`, which returns a double
-                    double length = corA.GetDistanceTo(corB); 
-                    
+                    double length = corA.GetDistanceTo(corB);
+
                     // If the distance is greater than the currently saved distance, update the distance and the two `ITrackable` variables you set above
                     // Once you've looped through everything, you've found the two Taco Bells farthest away from each other
-                    
+
                     if (length > distance)
                     {
                         distance = length;
@@ -72,9 +72,8 @@ namespace LoggingKata
                     }
                 }
 
-                var disMiles = distance / 1609.34;
-                Console.WriteLine(distance);
             }
+            Console.WriteLine($"{location1.Name} is {distance / 1609.34} miles far from {location2.Name}");
         }
     }
 }

@@ -30,9 +30,8 @@
             var name = cells[2];
 
             // Your going to need to parse your string as a `double`
-            var dLatitude = double.Parse(latitude);
-            
             // which is similar to parsing a string as an `int`
+            var dLatitude = double.Parse(latitude);
             var dLongitude = double.Parse(longitude);
 
             var tacoPoint = new Point();
@@ -43,14 +42,14 @@
             // that conforms to ITrackable
 
             // Then, you'll need an instance of the TacoBell class
-            var bell = new TacoBell(name, tacoPoint);
+            var tacoBell = new TacoBell(name, tacoPoint);
             
             // With the name and point set correctly
 
             // Then, return the instance of your TacoBell class
             // Since it conforms to ITrackable
 
-            return null;
+            return tacoBell;
         }
     }
 }
